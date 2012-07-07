@@ -1,0 +1,8 @@
+span.pull-left
+	i.icon-map-marker
+span.pull-left= __i('user-loc') + ':&nbsp;'
+if location
+	a.pull-left(href='#')= location
+else
+	a.pull-left(href='#')= __i('checking-loc') + '. ' + __i('wait') + ' ' + __i('change-manual') + '.'
+input.pull-left.hide(type='text')

@@ -1,0 +1,128 @@
+// navigation bar
+.navbar.navbar-fixed-top
+	.navbar-inner
+		.container-fluid
+			a(href="#").brand= __i('peoplemelt')
+			ul.nav.pull-right
+				li.dropdown
+					a#langlink(href="#",data-toggle="dropdown").dropdown-toggle
+						img.lang(src='img/' + locale + '.png')
+						span.lang= '&nbsp;' + locale
+						b.caret
+					ul.dropdown-menu
+						each lang, index in langs
+							li.langli(lang=lang): a(href="#")
+								img.lang(src='img/' + lang + '.png')
+								span.lang= '&nbsp;' + lang
+							if index != langs.length - 1
+								li.divider
+			ul.nav
+				li.active: a(href="#")= __i('home')
+				li: a(href="#")= __i('people')
+
+			- if(session.doc)
+				.btn-group.pull-right
+					a.btn.btn-primary(href="#{session.doc.ex_link}")
+						i.icon-user.icon-white
+						span= session.doc.username
+					a.btn.btn-primary.dropdown-toggle(href="#", data-toggle="dropdown")
+						span.caret
+					ul.dropdown-menu
+						li: a.edit_pm(href="/users/#{session.doc._id}/edit")
+							i.icon-edit
+							span= __i('Edit Profile')
+						li: a(href="/logout")
+							i.icon-share
+							span= __i('Sign out')
+				.nav.pull-right
+					#fb-login.fb_button(style='background-position: left -188px')
+						a.fb_button_medium(href='/auth/facebook')
+							span#fb_login_text.fb_button_text
+								| Connect with Facebook
+			- else if (everyauth.loggedIn)
+				.btn-group.pull-right
+					a.btn.btn-primary(href="#{everyauth.facebook.user.link}")
+						- if(session.user.image)
+							img.user_img(src='#{session.user.image}', title='#{session.user.name}')
+						- else
+							i.icon-user.icon-white
+					a.btn.btn-primary(href="#{everyauth.facebook.user.link}")
+						span= __i(session.user.name)
+					a.btn.btn-primary.dropdown-toggle(href="#", data-toggle="dropdown")
+						span.caret
+					ul.dropdown-menu
+						li: a(href="/editProfile/#{everyauth.facebook.user.id}")
+							i.icon-edit
+							span= __i('Edit Profile')
+						li: a(href="/logout")
+							i.icon-share
+							span= __i('Sign out')
+			- else
+				.nav.pull-right
+					#fb-login.fb_button(style='background-position: left -188px')
+							a.fb_button_medium(href='/auth/facebook')
+									span#fb_login_text.fb_button_text
+											| Connect with Facebook
+					//a.btn.btn-success.btn-mini(data-toggle="modal", href="#regModal")
+					a.rl(data-toggle="modal", href="#regModal")
+						i.icon-hand-right
+						span= __i('Register')
+					| |
+					//a.btn.btn-danger.btn-mini(data-toggle="modal", href="#logModal")
+					a.rl(data-toggle="modal", href="#logModal")
+						i.icon-check
+						span= __i('Login')
+
+// search panel
+.subnav.c-row
+	.container-fluid.valign.c-row
+		.pull-left
+			span.c-logo= __i('pm')
+		.pull-right
+			.input-append
+				input(type="text",data-provide="typeahead",data-items="4",data-source='["fan","fun","humor","trafic"]').input-xlarge
+				span.add-on
+					i.icon-search
+		.pull-right
+			a(href="#").btn.btn-warning.c-btn-post(href="#new-post-modal", data-toggle="modal")= __i('share-new')
+
+// header row
+.c-header.c-row.bg-grey
+	
+	// right
+	.c-right.c-col
+		.container-fluid
+			i.icon-tasks 
+			span= __i('stream') + ':'
+			a(href="#").pull-right
+				i.icon-off 
+				span= __i('auto-refresh') + ' ' + __i('on')
+	
+	// left
+	.c-left.c-col
+		#main-loc-link.container-fluid
+			a#homebtn.pull-right.btn.btn-small(href='#')
+				i.icon-home
+				span= __i('home')
+// content row
+.c-content.c-row
+
+	// left
+	.c-map.c-left.c-col.scroll-y
+		#map_canvas.fill			
+
+	// right
+	.c-right.c-col.scroll-y
+		#stream-container
+		#post-stream-load
+			img(src='img/loading.gif')
+			h4= __i('wait')
+		span#empty-posts.hide= __i('no-posts')
+
+div!= partial('parts/modal-loading.jade')
+div!= partial('parts/modal-new-post.jade')
+div!= partial('parts/modal-post-success.jade')
+include users/registration
+include users/login
+#editModal.modal.hide
+//include users/register

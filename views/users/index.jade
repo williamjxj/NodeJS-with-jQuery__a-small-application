@@ -1,0 +1,34 @@
+h1= title
+#lists
+  - each account in accounts
+    div.account
+      div.created_at= account.created_time
+      div.title
+        - if(account.username)
+            a.edit.btn.btn-mini.btn-primary(data-toggle="modal", href="/profile/"+account._id.toHexString())!= account.username
+        - else
+            - var fullname = account.first_name + ' ' + account.last_name
+            a.edit.btn.btn-mini.btn-primary(data-toggle="modal", href="/profile/"+account._id.toHexString())!= fullname
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        a.ShowOrHide(href="javascript:void(0)") Hide
+        pre
+          #{account}
+      div.body= account.body
+script
+  $('a.ShowOrHide').click(function(e) {
+    e.preventDefault();
+    var $a = $(e.target);
+    if ($('pre').is(':visible') && /Hide/.test($a.text())) {
+      $a.siblings('pre').fadeOut(100);
+      $a.text('Show');
+    }
+    else {
+      $a.siblings('pre').fadeIn(100);
+      $a.text('Hide');
+    }
+  });
+  $('a.edit').click(function(e) {
+    e.preventDefault();
+    document.location.href=$(this).attr('href');
+    return false;
+  });

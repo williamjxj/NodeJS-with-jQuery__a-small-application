@@ -1,0 +1,70 @@
+| <div class="modal hide" id="regModal">
+|   <div class="modal-header">
+|     <button type="button" class="close" data-dismiss="modal">×</button>
+|     <h3>New Account Registration</h3>
+|   </div>
+|     <form class="form-horizontal" id="register" method="post" action="/register">
+|       <fieldset>
+|   <div class="modal-body">
+|         <div class="control-group">
+|           <label class="control-label" for="username">Username:</label>
+|           <div class="controls">
+|             <input type="text" class="input-xlarge" name="username" id="username" rel="popover" data-content="Enter Username" data-original-title="Username">
+|              &nbsp;&nbsp;&nbsp;&nbsp;<span class="search"></span>
+|           </div>
+|         </div>
+|         <div class="control-group">
+|           <label class="control-label" for="pm_email">Your Email:</label>
+|           <div class="controls">
+|             <input type="text" class="input-xlarge" name="pm_email" id="pm_email" rel="popover" data-content="Enter email address" data-original-title="Email Address">
+|              &nbsp;&nbsp;&nbsp;&nbsp;<span class="search"></span>
+|           </div>
+|         </div>
+|         <div class="control-group">
+|           <label class="control-label" for="pm_email1">Re-enter Email:</label>
+|           <div class="controls">
+|             <input type="text" class="input-xlarge" name="pm_email1" id="pm_email1" rel="popover" data-content="Re-enter email address" data-original-title="Re-enter Email Address">
+|           </div>
+|         </div>
+|         <div class="control-group">
+|           <label class="control-label" for="pm_passwd">New Password:</label>
+|           <div class="controls">
+|             <input type="password" class="input-xlarge" name="pm_passwd" id="pm_passwd" rel="popover" data-content="Enter password" data-original-title="Password">
+|           </div>
+|         </div>
+|         <div class="control-group">
+|           <label class="control-label" for="firstname">First Name:</label>
+|           <div class="controls">
+|             <input type="text" class="input-xlarge" name="firstname" id="firstname" rel="popover" data-content="Enter first name" data-original-title="First Name">
+|           </div>
+|         </div>
+|         <div class="control-group">
+|           <label class="control-label" for="lastname">Last Name:</label>
+|           <div class="controls">
+|             <input type="text" class="input-xlarge" name="lastname" id="lastname" rel="popover" data-content="Enter last name" data-original-title="Last Name">
+|           </div>
+|         </div>
+|         <div class="control-group">
+|           <label for="sex" class="control-label">I am:</label>
+|           <div class="controls">
+|             <select id="sex" name="sex" class="select" style="width:100px;" rel="popover" data-content="Choose gender - Female or Male?" data-original-title="Gender">
+|               <option value="">Select Sex:</option>
+|               <option value="F">Female</option>
+|               <option value="M">Male</option>
+|             </select>
+|           </div>
+|         </div>
+|         <div class="control-group">
+|           <label for="picker1" class="control-label">Birthday:</label>
+|           <div class="controls">
+|               <div class="picker" id="picker1"></div>
+|           </div>
+|         </div>
+|   </div>
+|   <div class="modal-footer">
+|           <button class="btn btn-primary" type="submit">Sign up</button>
+|           <button class="btn" type="reset" id="reset">Reset</button>
+|  </div>
+|       </fieldset>
+|     </form>
+| </div>

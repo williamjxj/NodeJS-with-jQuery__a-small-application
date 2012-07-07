@@ -1,0 +1,283 @@
+/* Main Stylesheet */
+/* Import Bootstrap styles and Responsive styles */
+
+@import url('bootstrap.css');
+@import url('bootstrap-responsive.css');
+
+/* Add top padding for navbar-top-fixed */
+body {
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+.sidebar-nav {
+	padding: 9px 0;
+}
+/* Remove top padding when top navbar goes static in narrow viewports */
+@media (max-width: 979px) {
+  body {
+    padding-top: 0;
+  }
+}
+
+/* Custom CSS */
+
+/* Generic pane rules */
+body { margin: 0; -webkit-text-size-adjust: 100%; }
+.c-page { left: 0; right: 0; top: 0; bottom: 0; }
+.c-row, .c-col, .c-page { overflow: hidden; position: absolute;}
+.c-row { left: 0; right: 0; }
+.c-col { top: 0; bottom: 0; }
+.scroll-x { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.scroll-y { overflow-y: auto; -webkit-overflow-scrolling: touch; }
+.fill, .c-pane { position: absolute; left: 0; top: 0; right: 0; bottom: 0; width: 100%; height: 100% }
+.c-pane { display: none; }
+.clear-both {clear:both;}
+
+/* Workaround: in landscape mode, IEMobile makes bottom toolbar overlap the page, so shorten the page by 75px to compensate */
+.iemobile .c-page { bottom: -6px; }
+@media screen and (orientation:landscape) { .iemobile .c-page { bottom: 75px; } }
+
+[class*="icon-"] {
+    margin-right: 5px;
+}
+
+.bg-grey {
+    background-color: #F5F5F5;
+}
+.valign {
+	top:50%; height:34px; margin-top:-17px;
+}
+
+.c-logo {
+	font-size: 30px;
+	line-height: 28px;	
+}
+.c-btn-post{ margin-right: 20px; width: 150px;}
+
+.subnav.c-row { 
+	height: 75px; top: 40px;
+	border-bottom: 1px solid #777;
+	z-index: 500;
+    background: #fff;
+}
+
+.c-header.c-row {
+	top: 115px;
+	height: 36px; line-height: 36px;
+	border-top: 1px solid #777;
+	border-bottom: 1px solid #777;
+}
+.c-content.c-row { top: 153px; bottom: 0; }
+
+.c-left.c-col {left:0; right:470px;}
+
+.c-right.c-col {
+    right:0;
+    width: 470px;
+    border-left: 1px solid #777;
+}
+
+.c-shadow-bottom {
+	-webkit-box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.5);
+	-moz-box-shadow:    0px 1px 5px rgba(0, 0, 0, 0.5);
+	box-shadow:         0px 1px 5px rgba(0, 0, 0, 0.5);
+	z-index: 200;
+}
+.c-shadow-left {
+	-webkit-box-shadow: -1px 0px 5px rgba(0, 0, 0, 0.5);
+	-moz-box-shadow:    -1px 0px 5px rgba(0, 0, 0, 0.5);
+	box-shadow:         -1px 0px 5px rgba(0, 0, 0, 0.5);
+	z-index: 300;
+}
+.c-shadow-inset {
+	-moz-box-shadow: inset 0 0 5px 1px #000;
+	-webkit-box-shadow: inset 0 0 5px 1px #000;
+	box-shadow: inset 0 0 5px 1px #000;
+}
+
+.c-map img { max-width: none; }
+
+.c-rise {
+	z-index: 999 !important;
+}
+
+#locationnamelink, #locationnameinput {
+    margin-left: 10px;
+}
+
+#locationnameinput {
+	display: none;
+    width: 320px;
+}
+.locationnameinput { display: block; margin-top: 4px; }
+.lang { vertical-align: middle; }
+.relative { position: relative; }
+.user_img {vertical-align: middle; max-height: 22px; max-width: 30px; margin:0; padding:0;}
+
+/* Modal Windows */
+
+.c-modal2 {
+    width: 70%;
+    left: 35%;
+    overflow: hidden;
+    border: 4px solid #000;
+}
+
+.c-modal2-container {
+    width: 100%;
+    height: 470px;
+    position: relative;
+    overflow: hidden;
+}
+.c-modal2-left {
+    position: absolute;
+    left: 0;
+    right: 350px;
+    top: 0;
+    bottom: 0;
+}
+.c-modal2-right {
+    position: absolute;
+    width: 330px;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+.c-modal2-right-header {
+    border-bottom: 1px solid #DDD;
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+}
+
+#new-post-modal form {
+    margin: 0;
+}
+
+#new-post-modal .modal-body {
+    overflow: hidden;
+    max-height: 470px;
+}
+
+#new-post-modal .modal-body textarea,
+#new-post-modal .modal-body input {
+    width: 320px;
+}
+
+#new-post-modal .modal-body label {
+    padding-left: 5px;
+    font-weight: bold;
+}
+
+#new-post-modal .modal-body input#special {
+    width: auto;
+    margin-right: 10px;
+}
+
+#new-post-modal .c-map {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    top: 0px;
+    overflow: hidden;
+    border: 1px solid rgba(82, 168, 236, 0.8);
+}
+
+#new-post-map {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+#new-post-modal .c-map-note {
+    position: absolute;
+    left: 10%;
+    right: 10%;
+    top: 80%;
+    z-index: 8;
+}
+
+.c-post-attach {
+    padding: 10px;
+    text-align: center;
+    height: 100px;
+}
+
+.c-post-attach .btn {
+    margin: 10px;
+}
+
+.c-post-footnote {
+    font-size: smaller;
+    margin-bottom: 10px;
+}
+
+.input-container {
+    margin-top: 5px;
+}
+
+
+#homebtn {margin-top: 4px;}
+
+.c-stream-item {
+    padding: 10px;
+    margin: 10px;
+    background-color: #fff;
+}
+.c-line {
+    clear: both;
+    overflow: hidden;
+ }
+.c-conainer {
+    padding-right: 10px;
+    padding-left: 10px;
+    overflow: hidden;
+}
+.c-si-head {
+}
+.c-si-tags {
+    border-bottom: 1px solid #D5D5D5;
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+.c-si-content {
+    padding-bottom: 10px;
+    padding-top: 10px;
+    text-align:justify;
+}
+
+.c-si-content img {
+    margin-left: 20px;
+}
+.c-smaller {
+    font-size: smaller;
+}
+
+#loading-modal {
+    text-align: left;
+    width: auto;
+    margin: 0px;
+}
+
+#post-stream-load {
+    position: absolute;
+    top: 50%;
+    left: 0px;
+    text-align: center;
+    width: 100%;
+}
+
+#empty-posts {
+    font-style: italic;
+    padding-left: 2em;
+}
+
+.pac-container {
+    z-index: 2000 !important;
+}
+a.rl:link {color: #f5f5f5;}
+a.rl:visited {color: #ff0000;}
+a.rl:active {color: #00FF00;}
+a.rl:hover {background-color: rgba(0, 0, 0, 0.2);}
+a.rl {text-decoration: none; margin-left: 15px; margin-right: 10px;}

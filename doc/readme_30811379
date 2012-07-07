@@ -1,0 +1,25 @@
+0. Story [30811379 - User can create an account ] description:
+==============================================================
+User can create an account with the following information:
+•	Username 
+•	Fist Name,  
+•	Suname,
+•	Your email, 
+•	Re-enter email, 
+•	New Password,
+•	Gender
+•	Birthday 
+Please look at attachment of sample of form layout which was taken from Facebook. 
+Please use Model Window to show sign-up form:
+http://twitter.github.com/bootstrap/javascript.html#modals
+Also use form elements from here to compose the form: 
+http://twitter.github.com/bootstrap/base-css.html#forms
+(note: we already have all bootstrap css and js on our project)
+
+
+1.
+~/pm-web/public/js$ wget http://twitter.github.com/bootstrap/assets/js/bootstrap-modal.js
+
+
+2.
+

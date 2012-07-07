@@ -1,0 +1,21 @@
+.c-stream-item
+	.c-line.c-si-head.bg-grey
+		img.pull-left(src="http://placehold.it/40x40/777777/ffffff")
+		.c-conainer
+			.pull-left!= '<%= userName %>'
+			.pull-right!= '<%= time %>' + '.&nbsp;' + __i('ago')
+			.c-line.c-smaller
+				a(href='#')
+					span= __i('near') + '&nbsp;'
+					span!= '<%= positionText %>'
+	.c-line.c-conainer.c-si-tags
+		.pull-left.c-smaller!= __i('tags') + ':&nbsp;' + '<% for(var i = 0; i < tags.length; ++i) { %>'
+			a(href='#')!= '<%= tags[i] %>'
+			!= '<% if( i !== tags.length - 1) { %>,&nbsp;<% } %>'
+			!= '<% } %>'
+	.c-line.c-conainer.c-si-content
+		img(src="http://placehold.it/200x120").pull-right
+		p!= '<%= message %>'
+	.c-line.c-conainer
+		.pull-left Comment Share
+		.pull-right Like

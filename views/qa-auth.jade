@@ -1,0 +1,26 @@
+!!! 5
+html
+	head
+		include includes/head
+		script(type='text/javascript', src='/js/jquery-1.7.2.min.js')
+		script(type='text/javascript', src='/js/jquery.cookie.js')
+		script(type='text/javascript', src='/js/bootstrap.min.js')
+		script(type='text/javascript', src='/js/qa-auth.js')
+	body
+		.modal
+			.modal-header
+				h3= __i('qa-auth-head')
+			.modal-body
+				form#form
+					fieldset
+						.control-group
+							label.control-label= __i('username') + ':'
+							.controls
+								input.input-xlarge(placeholder= __i('username'), name="username")
+						.control-group
+							label= __i('pass') + ':'
+							.controls
+								input.input-xlarge(type="password", placeholder= __i('pass'), name="pass")
+					.clear-both
+			.modal-footer
+				a#auth.btn.btn-warning.pull-right(href='#')= __i('auth')

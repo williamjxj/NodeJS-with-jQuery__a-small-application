@@ -1,0 +1,40 @@
+#new-post-modal.modal.hide.c-modal2
+	//.modal-header
+	.modal-body
+		.c-modal2-container
+			.c-modal2-right
+				div.c-modal2-right-header
+					button.close(type="button", data-dismiss="modal")&times;
+					h3.error-mess.hide= __i('post-err')
+					h3.success-mess= __i('new-post')					
+				form(method="POST", action="/posts/")
+					fieldset
+						.control-group
+							label.control-label= __i('mess') + ':'
+							.controls
+								textarea#message.input-xlarge(placeholder= __i('mess-ph'), name="message")
+						.control-group
+							label= __i('tags-lb') + ':'
+							.controls
+								input#tags.input-xlarge(type="text", placeholder= __i('tags-ph'), name="tags")
+						input(type="hidden", name="lat")
+						input(type="hidden", name="long")
+						input(type="hidden", name="locationname")
+					.c-post-attach
+						a.btn.btn-primary(href="#")= __i("add-photo")
+						a.btn.btn-primary(href="#")= __i("add-video")						
+					.c-post-footnote
+						i.icon-exclamation-sign
+						= __i('selling-footnote')
+					.c-post-chbox
+						input#special(type="checkbox", name="special")
+						strong=__i('selling-chb')
+			.c-modal2-left
+				.alert.alert-error.c-map-note
+					span= __i('change-loc')
+					a.close(data-dismiss="alert")&times;					
+				.c-map
+					#new-post-map						
+			.clear-both
+	.modal-footer
+		a#post-news.btn.btn-warning.pull-right.c-post(href='#')= __i('post') + ' ' + __i('mess')

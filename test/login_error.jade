@@ -1,0 +1,46 @@
+| <div class="modal" id="logModal">
+|   <div class="alert alert-error">
+|    #{text} [Email: #{user.email2}, Password: #{user.password2}]
+| </div>
+|   <div class="modal-header">
+|     <button type="button" class="close" data-dismiss="modal">×</button>
+|     <h3>Sign in</h3>
+|   </div>
+|     <form class="well" id="login_form" method="post" action="/login">
+|       <fieldset>
+|   <div class="modal-body">
+|         <div class="control-group">
+|           <label class="control-label" for="email2">Email</label>
+|           <div class="controls">
+|             <input type="text" class="input-xlarge" name="email2" id="email2" value="#{user.email2}">
+|           </div>
+|         </div>
+|         <div class="control-group">
+|           <label class="control-label" for="password2">Password</label>
+|           <div class="controls">
+|             <input type="password" class="input-xlarge" name="password2" id="password2" value="#{user.password2}">
+|         </div>
+|         <div class="control-group">
+|         	<label class="checkbox" for="rememberme2">
+|             <input type="checkbox" id="rememberme2" /> Remember me
+|           </label>
+|		</div>
+|   </div>
+|   <div class="modal-footer">
+|         <div class="control-group">
+|           <span class="pull-left"><em><a href="#">Forgot Password?</a></em></span>
+|           <button class="btn btn-primary" type="submit">Sign in</button>
+|         </div>
+|  </div>
+|       </fieldset>
+|     </form>
+| </div>
+script
+  $(document).ready(function() {
+    var remember = $.cookie('pm[remember]');
+    if (remember) {
+        $('#email2').val($.cookie('pm[email]'));
+        $('#password2').val($.cookie('pm[password]'));
+        $('#rememberme2').attr("checked", true);
+    }
+  });
