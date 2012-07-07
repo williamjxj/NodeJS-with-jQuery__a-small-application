@@ -308,7 +308,7 @@ app.post('/register', function(req, res) {
     console.log(req.body);
 	// req.body.username = req.body.firstname + ' ' + req.body.lastname;
     // How does it garuanttee 'save' before res.render()?
-	users.findOrCreateUserByPeoplemeltData(req.body, function(err, callback){
+	users.findOrCreateUserByWilliam(req.body, function(err, callback){
 		res.render('index');
 	});
 	return;
@@ -362,7 +362,7 @@ app.get('/editProfile/:id', function(req, res) {
         res.render('users/userProfile', {
 			layout: 'wj_layout.jade',
             locals: {
-                title: user.username || 'Peoplemelt User Account',
+                title: user.username || 'William User Account',
                 user:user
             }
         });

@@ -1,9 +1,8 @@
 {
-	"peoplemelt": "peoplemelt",
+	"William": "William",
 	"profile": "Profile",
 	"sign-out": "Sign Out",
 	"home": "Home",
-	"people": "People",
 	"videos": "Videos",
 	"photos": "Photos",
 	"pm": "[Pm]",

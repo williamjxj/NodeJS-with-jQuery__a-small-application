@@ -1,8 +1,8 @@
 {
-  "name": "pm-web",
-  "description": "PeopleMelt Web",
+  "name": "William",
+  "description": "William Web",
   "version": "0.0.1-181",
-  "author": "Peoplemelt.com",
+  "author": "williamjxj.com",
   "engines": {
     "node": "0.6.x",
     "npm": "1.0.x"
@@ -25,7 +25,7 @@
     "request": ">=0.0.1",
     "socket.io-client": ">=0.0.1"
   },
-  "subdomain": "peoplemelt",
+  "subdomain": "williamjxj",
   "scripts": {
     "start": "node server.js",
     "test": "./node_modules/vows/bin/vows ./test/*.js"
